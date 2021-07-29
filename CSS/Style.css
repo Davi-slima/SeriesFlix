@@ -9,9 +9,12 @@
     box-sizing: border-box;
 }
 
+/* Elementos base */
+
 body{
     background: var(--preta);
-    font-family: 'Times New Roman', Times, serif';
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
 }
 
 header .container{
@@ -38,4 +41,32 @@ header nav a{
 
 header nav a:hover{
     color: #FFFF;
+}
+
+/* Filme principal */
+
+.filme-principal{
+    font-size: 17px;
+    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)100%), url('../img/Capa-Gotham.jpg');
+
+    height: 760px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .sinopse{
+    margin-bottom: 50px;
+}
+
+.titulo{
+    font-size: 50px;
+}
+
+.botao{
+    height: 30px;
+    width: 120px;
 }
