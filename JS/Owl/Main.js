@@ -14,3 +14,23 @@ $('.owl-carousel').owlCarousel({
         }
     }
 })
+
+function iniciaModal(modalID){
+    const modal = document.getElementById(modalID);
+    if(modal) {
+        modal.classList.add('mostrar');
+        modal.addEventListener('click', (e) =>{
+            if(e.target.className== 'fechar'){
+                modal.classList.remove('mostrar');
+            }
+        })
+    }
+}
+
+const trailer = document.querySelector('.informacao');
+
+trailer.addEventListener('click', () => {
+    iniciaModal('modal-trailer');
+});
+
+
