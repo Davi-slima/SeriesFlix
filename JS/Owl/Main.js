@@ -27,7 +27,7 @@ function iniciaModal(modalID){
     }
 }
 
-const trailer = document.querySelector('.informacao');
+const trailer = document.querySelector('.assistir');
 
 trailer.addEventListener('click', () => {
     iniciaModal('modal-trailer');
