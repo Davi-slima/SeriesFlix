@@ -58,18 +58,23 @@ header nav a:hover{
     align-items: flex-start;
 }
 
-.filme-principal .sinopse{
+.filme-principal .container{
+    width: 60%;
+    margin-left: 20px;
+}
+
+.filme-principal .container .sinopse{
     margin-bottom: 50px;
     margin-top: 30px;
 }
 
-.titulo{
+.filme-principal .container .titulo{
     margin-top: 20%;
     font-size: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.assistir{
+.filme-principal .container .assistir{
     background-color: rgba(0, 0, 0, .50);
     border: none;
     color: white;
@@ -82,16 +87,16 @@ header nav a:hover{
     transition: .5s;
 }
 
-.assistir:hover{
+.filme-principal .container .assistir:hover{
     background-color: #FFFF;
     color: #141414;
 }
 
-.assistir i{
+.filme-principal .container .assistir i{
     margin-right: 10px;
 }
 
-.informacao{
+.filme-principal .container .informacao{
     background-color: rgba(0, 0, 0, .50);
     border: none;
     color: white;
@@ -104,41 +109,33 @@ header nav a:hover{
     transition: .5s;
 }
 
-.informacao:hover{
+.filme-principal .container .informacao:hover{
     background-color: #FFFF;
     color: #141414;
 }
 
-.informacao i{
+.filme-principal .container .informacao i{
     margin-right: 10px;
-}
-
-.container{
-    margin-left: 20px;
-}
-
-.filme-principal .container{
-    width: 60%;
-}
-
-.box-filme{
-    height: 100%;
-    width: 100%;
-    display: block;
 }
 
 .carrosel-filmes{
     margin-top: 10px;
 }
 
-.item{
+.carrosel-filmes .item{
     position: relative;
     top: 0;
 }
-.item:hover{
+.carrosel-filmes .item:hover{
     padding: 20px;
     box-shadow: 0px 0px 15px #FFFF;
     transition: all .3s ease-in-out;
+}
+
+.carrosel-filmes .item .box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
 }
 
 /* Modal */
@@ -157,8 +154,8 @@ header nav a:hover{
     align-items: center;
 }
 
-.modal{
-    background: rgba(0, 0, 0, .70);
+.modal-container .modal{
+    background: rgba(0, 0, 0, .75);
     width: 620px;
     min-width: 300px;
     padding: 30px;
@@ -171,6 +168,103 @@ header nav a:hover{
     display: flex;
 }
 
+.modal-container .mostrar .modal {
+    animation: modal .3s;
+}
+
+.modal-container .modal .fechar-modal{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    cursor: pointer;
+}
+
+.modal-container .modal .fechar-modal .fechar{
+    margin: 1em;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .75);
+    box-shadow: rgba(0, 0, 0, .3) 0px 4px 0px ;
+    color: #FFFF;
+    border-radius: 50%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.modal-container .modal .fechar-modal .fechar:hover{
+    padding: 10px;
+    box-shadow: 0px 0px 10px #FFFF;
+    transition: all .5s ease-in-out;
+}
+
+.modal-container .modal .trailer{
+    width: 100%;
+    height: 315px;
+}
+
+.modal-container .modal .infoImagem{
+    width: 100%;
+    height: 100%;
+}
+.modal-container .modal .detalhesModal{
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    column-gap: 2em;
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes{
+    position: relative;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .detalhes-info{
+    margin: 0.8em 0px;
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .ano{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 10px;
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .classificacao{
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 1);
+    background-color: black;
+    margin-right: 10px;
+}
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .genero{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 10px;
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .genero a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .genero a:hover{
+    text-decoration: none;
+    color: rgb(95, 95, 95, 0.5);
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .fatos .temporadas{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.modal-container .modal .detalhesModal .previewModal--detalhes .titulo{
+    margin-top: 5px;
+}
+.modal-container .modal .detalhesModal .previewModal--detalhes .modalSinopse{
+    margin-top: 5px;
+    margin-bottom: 50px;
+}
+
+
+/* Keyframe */
+
 @keyframes modal {
     from {
         opacity: 0;
@@ -182,40 +276,6 @@ header nav a:hover{
         transform: translateX(0) translateY(calc(0)) scaleX(0) scaleY() translateZ(0px);
         /* transform: translate3d(0, -68px, 0); */
     }
-}
-.mostrar .modal {
-    animation: modal .3s;
-}
-
-.fechar-modal{
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    cursor: pointer;
-}
-
-.fechar{
-    margin: 1em;
-    width: 60px;
-    height: 60px;
-    background-color: rgba(0, 0, 0, .75);
-    box-shadow: rgba(0, 0, 0, .3) 0px 4px 0px ;
-    color: #FFFF;
-    border-radius: 50%;
-    padding: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.fechar:hover{
-    padding: 10px;
-    box-shadow: 0px 0px 10px #FFFF;
-    transition: all .5s ease-in-out;
-}
-
-/* Video modal */
-
-.trailer{
-    width: 560px;
-    height: 315px;
 }
 
 /* Responsividade */
@@ -241,7 +301,7 @@ header nav a:hover{
     }
 
     .trailer{
-        width: 100%;
+        height: 100%;
     }
 }
 
@@ -249,5 +309,4 @@ header nav a:hover{
     .sinopse{
         width: 50%;
     }
-   
 }
